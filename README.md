@@ -38,12 +38,16 @@ Large PRs bury signal inside changed files, unresolved comments, and check resul
 The tool turns that PR context into a compact checklist:
 
 ```md
+## Actionable PR Checklist
+- Critical Points Found: 2
+- Priority Labels: Rollout Safety; Auth Regression
+
 ## Key Changes
 - Refactors auth middleware to initialize a secure request context.
 
 ## Risks
-- Rollout order may matter if the database migration has not landed before deploy.
-- The new failure path could leak privileged behavior if admin checks are incomplete.
+1. Rollout Safety: deployment order may matter if the database migration has not landed before deploy.
+2. Auth Regression: the new failure path could leak privileged behavior if admin checks are incomplete.
 
 ## Questions
 - Does this change require new environment variables or secret rotation?

@@ -28,6 +28,8 @@ class RepoLayoutTests(unittest.TestCase):
         self.assertIn("PR URL", content)
         self.assertIn("owner/repo#number", content)
         self.assertIn("diff", content.lower())
+        self.assertIn("Actionable PR Checklist", content)
+        self.assertIn("Critical Points Found", content)
         self.assertIn("Key Changes", content)
         self.assertIn("Risks", content)
         self.assertIn("Questions", content)

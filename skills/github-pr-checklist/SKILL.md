@@ -49,11 +49,16 @@ Use the rubric in [references/review-rubric.md](references/review-rubric.md) whe
 Always use this output contract:
 
 ```md
+## Actionable PR Checklist
+- Critical Points Found: <count>
+- Priority Labels: <short labels such as Rollout Safety; Data Consistency; Auth Regression>
+
 ## Key Changes
 - 3 to 6 bullets about what materially changed
 
 ## Risks
-- concrete regressions, suspicious behavior, or fragile edges
+1. Rollout Safety: concrete regression, suspicious behavior, or fragile edge
+2. Data Consistency: concrete regression, suspicious behavior, or fragile edge
 
 ## Questions
 - missing context, assumptions to confirm, or follow-ups for the author
@@ -68,6 +73,8 @@ Always use this output contract:
 Keep the answer compact.
 Prefer short bullets over paragraphs.
 If a section has no meaningful items, say `- None worth calling out.` rather than padding it.
+Keep `Priority Labels` short and scannable so the result feels like a quick review card, not a report title.
+In `Risks`, lead each item with a short label such as `Rollout Safety`, `Data Consistency`, `Auth Regression`, or `Observability Gap`.
 
 ## Fallback Path
 
