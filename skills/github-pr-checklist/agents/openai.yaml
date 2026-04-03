@@ -1,0 +1,13 @@
+interface:
+  display_name: "GitHub PR Checklist"
+  short_description: "Turn pull requests into actionable review checklists."
+  default_prompt: "Use $github-pr-checklist to turn this pull request into an actionable review checklist."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "github"
+      description: "GitHub access for reading PR metadata, diffs, review comments, and check status."
+
+policy:
+  allow_implicit_invocation: true
