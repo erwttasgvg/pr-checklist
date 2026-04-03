@@ -1,0 +1,66 @@
+<svg viewBox="0 0 1200 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1720"/>
+      <stop offset="100%" stop-color="#151c28"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dx="0" dy="8" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.18"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="460" fill="url(#bg)"/>
+
+  <text x="90" y="70" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#f8fafc">Before: PR diff noise</text>
+  <text x="665" y="70" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#f8fafc">After: review-ready checklist</text>
+
+  <g transform="translate(70,95)" filter="url(#shadow)">
+    <rect width="470" height="280" rx="18" fill="#111827"/>
+    <rect width="470" height="42" rx="18" fill="#1f2937"/>
+    <circle cx="26" cy="21" r="6" fill="#fb7185"/>
+    <circle cx="46" cy="21" r="6" fill="#fbbf24"/>
+    <circle cx="66" cy="21" r="6" fill="#4ade80"/>
+    <text x="94" y="26" font-family="Arial, sans-serif" font-size="14" fill="#9ca3af">payments_service.py</text>
+    <text x="28" y="82" font-family="Courier New, monospace" font-size="17" fill="#86efac">+ start async backfill job</text>
+    <text x="28" y="116" font-family="Courier New, monospace" font-size="17" fill="#fca5a5">- direct read from old balance column</text>
+    <text x="28" y="150" font-family="Courier New, monospace" font-size="17" fill="#e5e7eb">+ switch reads after job completion</text>
+    <text x="28" y="184" font-family="Courier New, monospace" font-size="17" fill="#e5e7eb">+ retry on lock timeout</text>
+    <text x="28" y="228" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8">18 changed files · 6 review comments · checks pending</text>
+    <text x="28" y="258" font-family="Arial, sans-serif" font-size="16" fill="#64748b">Large changes, hidden rollout risk, hard to review quickly</text>
+  </g>
+
+  <text x="574" y="238" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#4ade80">-&gt;</text>
+
+  <g transform="translate(665,95)" filter="url(#shadow)">
+    <rect width="460" height="280" rx="18" fill="#ffffff"/>
+    <rect width="460" height="42" rx="18" fill="#f3f4f6"/>
+    <text x="24" y="27" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111827">Actionable PR Checklist</text>
+    <text x="24" y="86" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#111827">3 Critical Points Found</text>
+    <text x="24" y="118" font-family="Arial, sans-serif" font-size="16" fill="#4b5563">Priority Labels: Rollout Safety; Data Consistency; Retry Logic</text>
+
+    <g transform="translate(24,145)">
+      <rect width="405" height="42" rx="10" fill="#ecfdf5" stroke="#86efac"/>
+      <text x="16" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#166534">1. Rollout Safety</text>
+      <text x="210" y="27" font-family="Arial, sans-serif" font-size="15" fill="#166534">Ensure reads switch only after backfill completes.</text>
+    </g>
+
+    <g transform="translate(24,197)">
+      <rect width="405" height="42" rx="10" fill="#ffffff" stroke="#d1d5db"/>
+      <text x="16" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#111827">2. Data Consistency</text>
+      <text x="220" y="27" font-family="Arial, sans-serif" font-size="15" fill="#4b5563">Verify old and new balance fields stay in sync.</text>
+    </g>
+
+    <g transform="translate(24,249)">
+      <rect width="405" height="18" rx="9" fill="#f9fafb" stroke="#e5e7eb"/>
+      <text x="16" y="13" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Suggested tests: staged rollout, retry failure, column drift check</text>
+    </g>
+  </g>
+</svg>

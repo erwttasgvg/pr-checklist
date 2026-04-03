@@ -1,7 +1,7 @@
 # GitHub PR Checklist
 
 <p align="center">
-  <img src="docs/assets/hero-transformation.svg" alt="Pull request changes transformed into a concise review checklist" width="850">
+  <img src="docs/assets/demo-before-after.svg" alt="Before and after demo showing pull request noise transformed into an actionable checklist" width="950">
 </p>
 
 <p align="center">
@@ -26,6 +26,24 @@ GitHub PR Checklist is built for the next decision:
 - **Review faster** by focusing on behavior changes instead of line-by-line narration
 - **Miss fewer risky changes** by surfacing rollout, state, and edge-case concerns
 - **Avoid fluffy summaries** by keeping every section tied to an action or verification step
+
+## Who this is for
+
+- Engineers who review pull requests every day and want faster approval decisions
+- Founders and small teams who need better review signal without adding heavy process
+- Open-source maintainers triaging large or noisy pull requests
+- Anyone who has felt that PR summaries explained the patch without helping the review
+
+## Why this beats PR diff summaries
+
+Typical PR summaries stop at "what changed."
+
+This project is optimized for "what should I do next?"
+
+- It prioritizes risk over retelling the diff
+- It pulls unresolved reviewer concerns into the checklist
+- It suggests concrete tests instead of generic reassurance
+- It stays compact enough to scan before approving or requesting changes
 
 ## The Transformation
 
@@ -55,6 +73,47 @@ The tool turns that PR context into a compact checklist:
 ## Suggested Tests
 - Verify admin privilege elevation in staging.
 - Exercise the new request context under concurrency.
+```
+
+## Before and After
+
+### Before
+
+```txt
+18 changed files
+6 review comments
+checks pending
+
+- switched reads to the new balance column
+- added an async backfill job
+- touched retry logic and admin-only flows
+
+Need to review:
+- whether rollout order matters
+- whether the new and old columns can drift
+- whether retries could duplicate writes
+```
+
+### After
+
+```md
+## Actionable PR Checklist
+- Critical Points Found: 3
+- Priority Labels: Rollout Safety; Data Consistency; Retry Logic
+
+## Key Changes
+- Adds an async backfill job for the new balance column.
+- Switches reads from the old field to the new field after migration.
+- Updates retry behavior around lock timeouts.
+
+## Risks
+1. Rollout Safety: reads may switch before the backfill is complete.
+2. Data Consistency: old and new balance fields could drift during rollout.
+3. Retry Logic: lock-timeout retries may replay writes unexpectedly.
+
+## Suggested Tests
+- Run a staged rollout with partial backfill completion.
+- Compare old and new balance fields before and after retry paths.
 ```
 
 ## Scenario Case Studies

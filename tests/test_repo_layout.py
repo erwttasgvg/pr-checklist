@@ -14,11 +14,24 @@ class RepoLayoutTests(unittest.TestCase):
         self.assertIn("Review faster", content)
         self.assertIn("Miss fewer risky changes", content)
         self.assertIn("Avoid fluffy summaries", content)
+        self.assertIn("Who this is for", content)
+        self.assertIn("Why this beats PR diff summaries", content)
+        self.assertIn("Before", content)
+        self.assertIn("After", content)
 
     def test_skill_structure_exists(self):
         self.assertTrue(SKILL_DIR.exists(), "Skill directory should exist")
         self.assertTrue((SKILL_DIR / "SKILL.md").exists(), "SKILL.md should exist")
         self.assertTrue((SKILL_DIR / "agents" / "openai.yaml").exists(), "agents/openai.yaml should exist")
+
+    def test_license_exists(self):
+        license_file = ROOT / "LICENSE"
+        self.assertTrue(license_file.exists(), "LICENSE should exist")
+        self.assertIn("MIT License", license_file.read_text(encoding="utf-8"))
+
+    def test_demo_asset_exists(self):
+        demo_asset = ROOT / "docs" / "assets" / "demo-before-after.svg"
+        self.assertTrue(demo_asset.exists(), "demo asset should exist")
 
     def test_skill_markdown_documents_fallback_and_output_contract(self):
         skill_md = SKILL_DIR / "SKILL.md"
