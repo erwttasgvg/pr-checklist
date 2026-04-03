@@ -17,6 +17,13 @@
 
 ---
 
+## Requirements
+
+GitHub PR Checklist is a Codex skill.
+
+- Live PR review from a PR URL or `owner/repo#number` requires GitHub connector access in the host environment.
+- If connector access is unavailable, the skill still works with pasted `diff` or `patch` input.
+
 ## Why this exists
 
 Modern PR review is noisy. Most automated summaries simply retell the diff and add more reading to a process that already has too much of it.
@@ -135,14 +142,13 @@ Need to review:
 
 ## What it reads
 
-When GitHub access is available, the tool uses:
+When GitHub connector access is available, the tool uses:
 
 - PR metadata
 - changed files and diff
 - review comments
 - check status
 
-Direct PR URL or `owner/repo#number` review requires GitHub connector access in the host environment.
 If direct access is unavailable, it falls back to a pasted diff or patch and preserves the same output contract.
 
 ## Install
@@ -155,7 +161,7 @@ $CODEX_HOME/skills/github-pr-checklist
 ```
 
 The directory to copy is `skills/github-pr-checklist`.
-To review a live pull request from a URL or PR identifier, the host environment also needs GitHub tools or connector access.
+To review a live pull request from a URL or PR identifier, the host environment also needs GitHub connector access.
 
 ## Usage
 
@@ -176,7 +182,7 @@ skills/github-pr-checklist/
   references/
 
 docs/assets/
-  hero-transformation.svg
+  demo-before-after.svg
   social-preview.png
 ```
 

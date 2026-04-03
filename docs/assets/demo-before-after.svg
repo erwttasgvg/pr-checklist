@@ -44,23 +44,25 @@
     <rect width="460" height="42" rx="18" fill="#f3f4f6"/>
     <text x="24" y="27" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111827">Actionable PR Checklist</text>
     <text x="24" y="86" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#111827">3 Critical Points Found</text>
-    <text x="24" y="118" font-family="Arial, sans-serif" font-size="16" fill="#4b5563">Priority Labels: Rollout Safety; Data Consistency; Retry Logic</text>
+    <text x="24" y="118" font-family="Arial, sans-serif" font-size="15" fill="#4b5563">Priority Labels: Rollout Safety; Data Consistency; Retry Logic</text>
 
-    <g transform="translate(24,145)">
-      <rect width="405" height="42" rx="10" fill="#ecfdf5" stroke="#86efac"/>
-      <text x="16" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#166534">1. Rollout Safety</text>
-      <text x="210" y="27" font-family="Arial, sans-serif" font-size="15" fill="#166534">Ensure reads switch only after backfill completes.</text>
-    </g>
+      <g transform="translate(24,145)">
+        <rect width="405" height="42" rx="10" fill="#ecfdf5" stroke="#86efac"/>
+        <text x="16" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#166534">1. Rollout Safety</text>
+        <text x="210" y="22" font-family="Arial, sans-serif" font-size="13" fill="#166534">Ensure reads switch only after</text>
+        <text x="210" y="35" font-family="Arial, sans-serif" font-size="13" fill="#166534">backfill completes.</text>
+      </g>
 
-    <g transform="translate(24,197)">
-      <rect width="405" height="42" rx="10" fill="#ffffff" stroke="#d1d5db"/>
-      <text x="16" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#111827">2. Data Consistency</text>
-      <text x="220" y="27" font-family="Arial, sans-serif" font-size="15" fill="#4b5563">Verify old and new balance fields stay in sync.</text>
-    </g>
+      <g transform="translate(24,197)">
+        <rect width="405" height="42" rx="10" fill="#ffffff" stroke="#d1d5db"/>
+        <text x="16" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#111827">2. Data Consistency</text>
+        <text x="220" y="22" font-family="Arial, sans-serif" font-size="13" fill="#4b5563">Verify old and new balance</text>
+        <text x="220" y="35" font-family="Arial, sans-serif" font-size="13" fill="#4b5563">fields stay in sync.</text>
+      </g>
 
-    <g transform="translate(24,249)">
-      <rect width="405" height="18" rx="9" fill="#f9fafb" stroke="#e5e7eb"/>
-      <text x="16" y="13" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Suggested tests: staged rollout, retry failure, column drift check</text>
-    </g>
+      <g transform="translate(24,249)">
+        <rect width="405" height="18" rx="9" fill="#f9fafb" stroke="#e5e7eb"/>
+        <text x="16" y="13" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Suggested tests: staged rollout, retry failure, column drift check</text>
+      </g>
   </g>
 </svg>
