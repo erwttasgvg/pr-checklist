@@ -4,7 +4,6 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL_DIR = ROOT / "skills" / "github-pr-checklist"
-SHOWCASE_DIR = ROOT / "showcase"
 
 
 class RepoLayoutTests(unittest.TestCase):
@@ -35,15 +34,6 @@ class RepoLayoutTests(unittest.TestCase):
         self.assertIn("Questions", content)
         self.assertIn("Suggested Tests", content)
         self.assertIn("Reply Draft", content)
-
-    def test_showcase_handoff_exists(self):
-        self.assertTrue(SHOWCASE_DIR.exists(), "showcase directory should exist")
-        self.assertTrue((SHOWCASE_DIR / "README.md").exists(), "showcase README should exist")
-        self.assertTrue((SHOWCASE_DIR / "content" / "landing-copy.md").exists(), "landing copy should exist")
-        self.assertTrue((SHOWCASE_DIR / "content" / "showcase-brief.json").exists(), "showcase brief should exist")
-        self.assertTrue((SHOWCASE_DIR / "content" / "demo-script.md").exists(), "demo script should exist")
-        self.assertTrue((SHOWCASE_DIR / "ANTIGRAVITY_PROMPT.md").exists(), "antigravity prompt should exist")
-
 
 if __name__ == "__main__":
     unittest.main()

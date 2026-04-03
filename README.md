@@ -116,26 +116,10 @@ skills/github-pr-checklist/
   agents/openai.yaml
   references/
 
-showcase/
-  README.md
-  content/
-  ANTIGRAVITY_PROMPT.md
-
 docs/assets/
   hero-transformation.svg
   social-preview.png
 ```
-
-## Visual Handoff
-
-The design-facing handoff lives in `showcase/`.
-
-That folder contains:
-
-- approved public-facing copy
-- a structured showcase brief
-- a demo storyboard
-- a ready-made prompt for antigravity
 
 ---
 
